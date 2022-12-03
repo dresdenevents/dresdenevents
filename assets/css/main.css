@@ -854,8 +854,9 @@
 	}
 
 		.image.filtered:after {
-			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
-			background-size: 128px 128px, auto;
+			background-image: url(../../images/overlay.png), linear-gradient(45deg, rgb(92 92 92 / 25%) 25%, rgb(52 52 52 / 25%) 50%, rgb(66 66 66 / 25%)), linear-gradient(0deg, rgb(0 0 0 / 13%), rgba(0, 0, 0, 0.125));
+		    background-size: 128px 128px, auto, auto;
+		    box-shadow: inset 0 0 200px black;
 			-moz-pointer-events: none;
 			-webkit-pointer-events: none;
 			-ms-pointer-events: none;
@@ -871,7 +872,7 @@
 		}
 
 		.image.filtered.tinted:after {
-			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25)), linear-gradient(0deg, rgba(0, 0, 0, 0.125), rgba(0, 0, 0, 0.125));
+			background-image: url(../../images/overlay.png), linear-gradient(45deg, rgb(0 0 0 / 50%) 25%, rgb(0 0 0 / 50%) 50%, rgb(32 32 32 / 50%)), linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5));
 			background-size: 128px 128px, auto, auto;
 		}
 
@@ -1377,6 +1378,10 @@
 				}
 
 	}
+
+.list2go {
+			min-height: 200px;
+		}
 
 /* Table */
 
@@ -2175,14 +2180,14 @@
 		}
 
 			.panel > *.color0 {
-				background-image: url("../../images/overlay.png"), linear-gradient(45deg, #726193 20%, #e37b7c 60%, #ffe4b4);
+				background-image: url("../../images/overlay.png"), linear-gradient(77deg, #070402 20%, #12262c 60%, #01010f);
 				background-size: 128px 128px, auto;
 			}
 
 			.panel > *.color1 {
-				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
-				background-size: 128px 128px, auto;
-				background-color: #726193;
+				    background-image: url(../../images/overlay.png), linear-gradient(135deg, rgb(83 41 164 / 25%) 25%, rgb(209 123 227 / 25%) 50%, rgb(180 232 255 / 25%));
+    				background-size: 128px 128px, auto;
+    				background-color: #000000;
 			}
 
 			.panel > *.color2 {
@@ -2204,9 +2209,9 @@
 			}
 
 			.panel > *.color1-alt {
-				background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
-				background-size: 128px 128px, auto;
-				background-color: #6c5e86;
+				    background-image: url(../../images/overlay.png), linear-gradient(135deg, rgb(83 41 164 / 25%) 25%, rgb(209 123 227 / 25%) 50%, rgb(180 232 255 / 25%));
+    background-size: 128px 128px, auto;
+    background-color: #000000;
 			}
 
 			.panel > *.color2-alt {
@@ -2697,9 +2702,9 @@
 		}
 
 		.panel.color1 {
-			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
-			background-size: 128px 128px, auto;
-			background-color: #726193;
+			    background-image: url(../../images/overlay.png), linear-gradient(135deg, rgb(83 41 164 / 25%) 25%, rgb(209 123 227 / 25%) 50%, rgb(180 232 255 / 25%));
+    background-size: 128px 128px, auto;
+    background-color: #000000;
 		}
 
 		.panel.color2 {
@@ -2721,9 +2726,9 @@
 		}
 
 		.panel.color1-alt {
-			background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
-			background-size: 128px 128px, auto;
-			background-color: #6c5e86;
+			    background-image: url(../../images/overlay.png), linear-gradient(135deg, rgb(83 41 164 / 25%) 25%, rgb(209 123 227 / 25%) 50%, rgb(180 232 255 / 25%));
+    background-size: 128px 128px, auto;
+    background-color: #000000;
 		}
 
 		.panel.color2-alt {
@@ -2746,6 +2751,10 @@
 
 	@media screen and (max-width: 736px) {
 
+		.list2go {
+			min-height: 450px;
+		}
+
 		.panel {
 			-moz-flex-direction: column;
 			-webkit-flex-direction: column;
@@ -2755,9 +2764,9 @@
 		}
 
 			.panel > *.color1 {
-				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
-				background-size: 128px 128px, auto;
-				background-color: #726193;
+				    background-image: url(../../images/overlay.png), linear-gradient(135deg, rgb(83 41 164 / 25%) 25%, rgb(209 123 227 / 25%) 50%, rgb(180 232 255 / 25%));
+    background-size: 128px 128px, auto;
+    background-color: #000000;
 			}
 
 			.panel > *.color2 {
@@ -2779,9 +2788,9 @@
 			}
 
 			.panel > *.color1-alt {
-				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
-				background-size: 128px 128px, auto;
-				background-color: #6c5e86;
+				    background-image: url(../../images/overlay.png), linear-gradient(135deg, rgb(83 41 164 / 25%) 25%, rgb(209 123 227 / 25%) 50%, rgb(180 232 255 / 25%));
+    background-size: 128px 128px, auto;
+    background-color: #000000;
 			}
 
 			.panel > *.color2-alt {
@@ -3182,9 +3191,9 @@
 				}
 
 			.panel.color1 {
-				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.25) 25%, rgba(227, 123, 124, 0.25) 50%, rgba(255, 228, 180, 0.25));
-				background-size: 128px 128px, auto;
-				background-color: #726193;
+				    background-image: url(../../images/overlay.png), linear-gradient(135deg, rgb(83 41 164 / 25%) 25%, rgb(209 123 227 / 25%) 50%, rgb(180 232 255 / 25%));
+    background-size: 128px 128px, auto;
+    background-color: #000000;
 			}
 
 			.panel.color2 {
@@ -3206,9 +3215,9 @@
 			}
 
 			.panel.color1-alt {
-				background-image: url("../../images/overlay.png"), linear-gradient(135deg, rgba(114, 97, 147, 0.175) 25%, rgba(227, 123, 124, 0.175) 50%, rgba(255, 228, 180, 0.175));
-				background-size: 128px 128px, auto;
-				background-color: #6c5e86;
+				    background-image: url(../../images/overlay.png), linear-gradient(135deg, rgb(83 41 164 / 25%) 25%, rgb(209 123 227 / 25%) 50%, rgb(180 232 255 / 25%));
+    background-size: 128px 128px, auto;
+    background-color: #000000;
 			}
 
 			.panel.color2-alt {
