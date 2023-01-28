@@ -40,7 +40,7 @@
 							<li><a href="#first">Space</a></li>
 							<!--li><a href="#second">Second Section</a></li-->
 							<li><a href="#buffet">Food</a></li>
-							<li><a href="#cta">Crew</a></li>
+							<li><a href="#crew">Crew</a></li>
 						</ul>
 					</nav>
 
@@ -89,41 +89,62 @@
 							</section>
 
 						<!-- Second Section -->
-							<section id="second" class="main special">
+							<section id="buffet" class="main special">
 								<header class="major">
-									<p>
-										Sollte das Wetter mitspielen, sind Eure Freunde natürlich auch erwünscht. Kurze Meldung dazu reicht. Eure Partner sind  selbstverständlich eingeladen und dürfen einfach so mitgebracht werden.
-										<br>
-										<br>
-										Wie immer macht Ihr mit die größte Freude, wenn Ihr für Euch selbst sorgt. Etwas Bier, Softgetränke, Gitarre und Cajon werden gestellt. Für alles andere gibt es <a href="https://werbringtwas.com/poll/4736e1b">hier</a> sonst auch nochmal eine Liste, wo Ihr eintragen könnt, was Ihr mitbringt. 
-										<br>
-										<br> 
-										Falls ihr zurück laufen wollt, bringt Euch bitte <b>Taschenlampen</b> mit :)
-									</p>
+									<h2 class="major">Food</h2>
 								</header>
+									<p>
+									<div class="intro joined">
+
+										Getränke gibt es gegen einen geringen <strong>bar</strong>-Betrag an der Bar.
+
+								<h3> Pauschale?</h3>
+
+								Statt mir was zu schenken, bringt mit lieber was fürs Buffet mit.
+									</div>
+									<div class="inner"><iframe src="https://list2go.io/de/list/-NMhceHYxEhr-LX0M3b7" class="list2go" height="100%" width="100%"></iframe>
+									</div>
+									<div class="image filtered tinted" data-position="top left">
+										<img src="../images/pic02.jpg" alt="" />
+									</div>
+									</p>
 							</section>
+
+						<!-- Third Section -->
+						<section id="crew" class="main special">
+							<header class="major">
+								<h2 class="major">Crew</h2>
+							</header>
+							<p>
+							<form id="javascript_form">
+
+								<div class="field">
+									<input type="radio" id="yes" name="answer" value="yes" class="color2 mt-5" checked>
+									<label for="yes">Klar, bin dabei!</label>
+
+									<input type="radio" id="no" name="answer" value="no" class="color2 mt-5" />
+									<label for="no">Ich kann leider nicht...</label>
+
+									<label for="guest" class="mt-5">Name</label>
+									<input type="text" name="guest" id="guest" value="" placeholder="Name" />
+
+
+
+									<div class="people mt-5">
+										<label for="other">Ich bringe noch folgende Leute mit</label>
+										<input type="text" name="other" id="other" placeholder="Gib die Namen oder einfach nur die Anzahl ein" rows="2"></input>
+									</div>
+									<input type="submit" id="js_send" value="Abschicken" class="special color2 mt-5"/>
+								</div>
+
+							</form>
+							</p>
+						</section>
 
 
 				<!-- Footer -->
 					<footer id="footer">
-						<section id="cta">
-							<h2>Du bist dabei?! Super! Schreib mir :)</h2>
-							<ul class="icons">
-								<!--li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li-->
-								<li><a href="mailto:odenwald91@gmail.com?subject=Wishing%upon%the%stars%together" class="icon fa-envelope alt"><span class="label">Mail</span></a></li>
-								<li><a href="https://www.facebook.com/jasmin.odenwald" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
-								<li><a href="https://www.instagram.com/jassis_ode/?hl=de" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
-								<li><a href="https://doodle.com/poll/xs48vhhstnexqbr6" class="icon fa-calendar-check-o alt"><span class="label">Doodle</span></a></li>
-								<!--li><a href="https://doodle.com/poll/xs48vhhstnexqbr6" class="icon fa-dribbble alt"><span class="label">Doodle</span></a></li-->
-							</ul>
-							... oder ganz entspannt per <b>Whatsapp</b> ;)
-							<br>
-							<br>
-							<h2 style="text-align:left"> Ich freu mich auf Euch! 
-								<br> Eure Jassi :)
-							</h2>
-						</section>
-						<p class="copyright">&copy; JassiO. Based On: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<div class="footer align-center aln-center">Einladung von <a href="https://dresdenevents.github.io/index.html">dresdenevents</a> mit ❤</div>
 					</footer>
 
 			</div>
@@ -138,6 +159,75 @@
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/dots.js"></script>
 			<script src="assets/js/stars.js"></script>
+
+				<script>
+
+					//update this with your js_form selector
+					var form_id_js = "javascript_form";
+
+					var data_js = {
+						"access_token": "5vxddodopvgucj1e7ner43uo" // sent after you sign up
+					};
+
+					function js_onSuccess() {
+						// remove this to avoid redirect
+						alert("Erfolgreich abgeschickt")
+						sendButton.value = 'Erfolgreich abgeschickt'
+						//window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
+					}
+
+					function js_onError(error) {
+						// remove this to avoid redirect
+						alert("Das hat nicht geklappt. Bitte versuche es später erneut.")
+						//window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+					}
+
+					var sendButton = document.getElementById("js_send");
+
+					function js_send() {
+						sendButton.value='Versende Antwort...';
+						sendButton.disabled=true;
+						var request = new XMLHttpRequest();
+						request.onreadystatechange = function() {
+							if (request.readyState == 4 && request.status == 200) {
+								js_onSuccess();
+							} else
+							if(request.readyState == 4) {
+								js_onError(request.response);
+							}
+						};
+
+						var guest = document.querySelector("#" + form_id_js + " [name='guest']").value;
+						var radio = document.querySelector("#" + form_id_js + " [name='answer']:checked").value;
+						var other = document.querySelector("#" + form_id_js + " [name='other']").value;
+						data_js['subject'] = radio == "yes" ? "Flo Zusage" : "Flo Absage";
+						data_js['text'] = guest + " und bringt mit: " + (other ? other : 'niemanden');
+						var params = toParams(data_js);
+
+						request.open("POST", "https://postmail.invotes.com/send", true);
+						request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+						request.send(params);
+
+						return false;
+					}
+
+					sendButton.onclick = js_send;
+
+					function toParams(data_js) {
+						var form_data = [];
+						for ( var key in data_js ) {
+							form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(data_js[key]));
+						}
+
+						return form_data.join("&");
+					}
+
+					var js_form = document.getElementById(form_id_js);
+					js_form.addEventListener("submit", function (e) {
+						e.preventDefault();
+					});
+				</script>
 
 	</body>
 </html>
