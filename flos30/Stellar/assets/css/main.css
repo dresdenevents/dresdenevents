@@ -5,6 +5,16 @@
 	height: 500px;
 }
 
+.cta {
+	margin-top: 20px;
+	width: 100%;
+}
+
+#javascript_form {
+	color: #c41cde;
+	text-align: left;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -3434,8 +3444,9 @@ input, select, textarea {
 		#main input[type="email"],
 		#main select,
 		#main textarea {
-			background-color: rgba(222, 222, 222, 0.25);
+			background-color: rgb(19, 22, 30);
 			border-color: #dddddd;
+			color: #eff7ff;
 		}
 
 			#main input[type="text"]:focus,
@@ -3481,23 +3492,23 @@ input, select, textarea {
 		}
 
 		#main ::-webkit-input-placeholder {
-			color: rgba(99, 99, 99, 0.25) !important;
+			color: rgba(218, 218, 218, 0.25) !important;
 		}
 
 		#main :-moz-placeholder {
-			color: rgba(99, 99, 99, 0.25) !important;
+			color: rgba(218, 218, 218, 0.25) !important;
 		}
 
 		#main ::-moz-placeholder {
-			color: rgba(99, 99, 99, 0.25) !important;
+			color: rgba(218, 218, 218, 0.25) !important;
 		}
 
 		#main :-ms-input-placeholder {
-			color: rgba(99, 99, 99, 0.25) !important;
+			color: rgba(218, 218, 218, 0.25) !important;
 		}
 
 		#main .formerize-placeholder {
-			color: rgba(99, 99, 99, 0.25) !important;
+			color: rgba(218, 218, 218, 0.25) !important;
 		}
 
 		#main .icon.major {
