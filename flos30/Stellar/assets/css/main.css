@@ -15,6 +15,18 @@
 	text-align: left;
 }
 
+.intro {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media screen and (max-width: 736px) {
+	.intro {
+		display: block;
+	}
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
