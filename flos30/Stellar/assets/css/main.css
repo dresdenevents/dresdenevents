@@ -11,7 +11,7 @@
 }
 
 #javascript_form {
-	color: #c41cde;
+	color: #636363;
 	text-align: left;
 }
 
@@ -3453,7 +3453,7 @@ input, select, textarea {
 				}
 
 		#main label {
-			color: #636363;
+			color: #c41cde;
 		}
 
 		#main input[type="text"],
