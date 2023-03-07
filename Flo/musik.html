@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html style="height: 1000px">
+<head>
+    <title>30. Geburtstag</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta property="og:image" content="images/preview.jpg">
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/stars.css"/>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css"/>
+    </noscript>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon-star.ico">
+</head>
+
+<body class="is-preload"  style="height: 1000px">
+<canvas class="dots" id="dots" name="dots" style="height: 1000px"></canvas>
+
+<div class="star-container" id="star-cont" style="height: 80%">
+    <div class="star" id="mr_star"></div>
+</div>
+</div>
+</div>
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header" class="alt text-color-animation" style="padding-bottom: 2em">
+						<span class="logo">
+							<i class="fa fa-rocket" style="color: #da6aea; font-size: xxx-large"></i>
+							</span>
+        <h1>30 Runden um die Sonne</h1>
+        <p style="color: white">Out-of-this-world birthday party</p>
+
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Third Section -->
+        <section id="crew" class="main special align-left">
+            <header class="major">
+                <h2 class="major">Musik</h2>
+            </header>
+            <p>
+            <form id="javascript_form">
+            <strong class="text-color-animation">Du hast einen Musikwunsch? Her damit!</strong>
+                <div class="field" style="padding-top: 15px">
+
+                    <div class="people mt-5" style="margin-top: 15px">
+                        <label for="other">Titel</label>
+                        <input type="text" name="other" id="other"
+                               placeholder="Name des Songs" rows="2"></input>
+                    </div>
+
+                    <label for="guest" class="mt-5" style="margin-top: 10px">Interpret</label>
+                    <input type="text" name="guest" id="guest" value="" placeholder="Name das Künstlers"/>
+
+                    <input type="submit" id="js_send" value="Abschicken" class="special color2 cta"/>
+                </div>
+
+            </form>
+            </p>
+        </section>
+
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="footer align-center aln-center">Einladung von <a
+                    href="https://dresdenevents.github.io/index.html">dresdenevents</a> mit ❤
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dots.js"></script>
+    <script src="assets/js/stars.js"></script>
+
+    <script>
+
+        //update this with your js_form selector
+        var form_id_js = "javascript_form";
+
+        var data_js = {
+            "access_token": "5vxddodopvgucj1e7ner43uo" // sent after you sign up
+        };
+
+        function js_onSuccess() {
+            // remove this to avoid redirect
+            alert("Erfolgreich abgeschickt")
+            sendButton.value = 'Erfolgreich abgeschickt'
+            //window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
+        }
+
+        function js_onError(error) {
+            // remove this to avoid redirect
+            alert("Das hat nicht geklappt. Bitte versuche es später erneut.")
+            //window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+        }
+
+        var sendButton = document.getElementById("js_send");
+
+        function js_send() {
+            sendButton.value = 'Versende Antwort...';
+            sendButton.disabled = true;
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == 200) {
+                    js_onSuccess();
+                } else if (request.readyState == 4) {
+                    js_onError(request.response);
+                }
+            };
+
+            var guest = document.querySelector("#" + form_id_js + " [name='guest']").value;
+            var other = document.querySelector("#" + form_id_js + " [name='other']").value;
+            data_js['subject'] = "Musikwunsch";
+            data_js['text'] = guest + "mit dem Titel " + (other ? other : 'niemanden');
+            var params = toParams(data_js);
+
+            request.open("POST", "https://postmail.invotes.com/send", true);
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            request.send(params);
+
+            return false;
+        }
+
+        sendButton.onclick = js_send;
+
+        function toParams(data_js) {
+            var form_data = [];
+            for (var key in data_js) {
+                form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(data_js[key]));
+            }
+
+            return form_data.join("&");
+        }
+
+        var js_form = document.getElementById(form_id_js);
+        js_form.addEventListener("submit", function (e) {
+            e.preventDefault();
+        });
+    </script>
+
+</body>
+</html>
